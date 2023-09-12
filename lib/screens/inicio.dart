@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:menuylocalstoras/shared_preferen/preferencias.dart';
 import 'package:menuylocalstoras/widgets/menu.dart';
 
 class InicioScreen extends StatelessWidget {
@@ -8,8 +9,16 @@ class InicioScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(title: Text('Inicio')),
       drawer: MenuScreen(),
-      body: const Center(
-        child: Text('Hola Mundo'),
+      body: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Text('Modo Oscuro :${Preferencias.modooscuro}'),
+          Divider(),
+          Text('Genero :${Preferencias.genero}'),
+          Divider(),
+          Text('Nombre del Usuario :${Preferencias.nombre}'),
+          Divider(),
+        ],
       ),
     );
   }
